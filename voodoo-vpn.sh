@@ -22,9 +22,9 @@ if [[ "`uname`" == "Darwin" ]]; then
 fi
 
 # Please define your own values for those variables
-IPSEC_PSK=GQkSuxT8f/P=4*7hwM
-VPN_USER=jbriggs
-VPN_PASSWORD=YTIWnanoLC6HLiViXGMxB7K9kTnw
+IPSEC_PSK=very_unsecure_key
+VPN_USER=johndoe
+VPN_PASSWORD=unsecure
 
 # Those two variables will be found automatically
 PRIVATE_IP=`wget -q -O - 'http://169.254.169.254/latest/meta-data/local-ipv4'`
@@ -111,6 +111,7 @@ EOF
 cat > /etc/ppp/chap-secrets <<EOF
 # Secrets for authentication using CHAP
 # client	server	secret			IP addresses
+
 $VPN_USER	l2tpd	$VPN_PASSWORD	*
 EOF
 
