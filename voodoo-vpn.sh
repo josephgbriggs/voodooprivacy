@@ -103,6 +103,8 @@ idle 1800
 mtu 1280
 mru 1280
 lock
+lcp-echo-failure 10
+lcp-echo-interval 60
 connect-delay 5000
 EOF
 
